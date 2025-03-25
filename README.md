@@ -322,4 +322,119 @@ A leaderboard of verified users based on audience engagement.
 
 ---
 
-Now go uncover the trends behind the tweets 📊🐤✨
+Now go uncover the trends behind the tweets 📊🐤✨ 
+
+Sure! Here's a clean and concise `README.md` that explains the **logic and output** for each task in your Spark SQL Social Media Sentiment Analysis assignment:
+
+---
+
+# 📊 Social Media Sentiment Analysis using Spark SQL
+
+This project uses **PySpark** to analyze social media post data and extract meaningful insights across four key tasks: hashtag trends, engagement by age group, sentiment vs engagement, and top verified users.
+
+---
+
+## 📁 Project Structure
+```
+SocialMediaSentimentAnalysis/
+├── input/
+│   ├── posts.csv
+│   └── users.csv
+├── outputs/
+│   ├── hashtag_trends.csv
+│   ├── engagement_by_age.csv
+│   ├── sentiment_engagement.csv
+│   └── top_verified_users.csv
+├── src/
+│   ├── task1_hashtag_trends.py
+│   ├── task2_engagement_by_age.py
+│   ├── task3_sentiment_vs_engagement.py
+│   └── task4_top_verified_users.py
+```
+
+
+##  Task Overview
+
+###  Hashtag Trends (`task1_hashtag_trends.py`)
+
+**Logic:**
+- Split comma-separated hashtags into individual entries.
+- Flatten using `explode()` and normalize (trim + lowercase).
+- Count the frequency of each hashtag.
+- Sort by descending frequency.
+
+**Sample Output:**
+| Hashtag     | Count |
+|-------------|--------|
+| `#ux`       | 31     |
+| `#bug`      | 25     |
+| `#ai`       | 21     |
+| `#design`   | 21     |
+| `#tech`     | 20     |
+
+---
+
+###  Engagement by Age Group (`task2_engagement_by_age.py`)
+
+**Logic:**
+- Join posts and users data on `UserID`.
+- Group by `AgeGroup`.
+- Calculate average `Likes` and `Retweets`.
+
+**Sample Output:**
+| AgeGroup | Avg Likes | Avg Retweets |
+|----------|------------|---------------|
+| Adult    | 75.28      | 21.95         |
+| Senior   | 74.48      | 22.31         |
+| Teen     | 73.81      | 27.10         |
+
+---
+
+### Sentiment vs Engagement (`task3_sentiment_vs_engagement.py`)
+
+**Logic:**
+- Categorize posts by `SentimentScore`:  
+  - Positive (> 0.3)  
+  - Neutral (-0.3 to 0.3)  
+  - Negative (< -0.3)
+- Group by sentiment.
+- Calculate average `Likes` and `Retweets`.
+
+**Sample Output:**
+| Sentiment | Avg Likes | Avg Retweets |
+|-----------|------------|---------------|
+| Negative  | 80.00      | 25.29         |
+| Neutral   | 76.45      | 21.59         |
+| Positive  | 69.81      | 23.98         |
+
+---
+
+###  Top Verified Users by Reach (`task4_top_verified_users.py`)
+
+**Logic:**
+- Filter for `Verified` users.
+- Calculate **reach** as `Likes + Retweets`.
+- Group by `Username`, sum total reach.
+- Return top 5 users.
+
+**Sample Output:**
+| Username         | Total Reach |
+|------------------|-------------|
+| @social_queen12  | 420         |
+| @techie4236      | 417         |
+| @meme_lord15     | 390         |
+| @pixel_pusher37  | 358         |
+| @meme_lord10     | 350         |
+
+---
+
+## Conclusion
+
+This analysis provides insights into:
+- What hashtags are trending
+- Which age groups are most engaged
+- How sentiment affects post reach
+- Who the top verified influencers are
+
+
+
