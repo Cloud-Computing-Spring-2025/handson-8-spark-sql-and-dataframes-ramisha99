@@ -328,30 +328,6 @@ Sure! Here's a clean and concise `README.md` that explains the **logic and outpu
 
 ---
 
-# 📊 Social Media Sentiment Analysis using Spark SQL
-
-This project uses **PySpark** to analyze social media post data and extract meaningful insights across four key tasks: hashtag trends, engagement by age group, sentiment vs engagement, and top verified users.
-
----
-
-## 📁 Project Structure
-```
-SocialMediaSentimentAnalysis/
-├── input/
-│   ├── posts.csv
-│   └── users.csv
-├── outputs/
-│   ├── hashtag_trends.csv
-│   ├── engagement_by_age.csv
-│   ├── sentiment_engagement.csv
-│   └── top_verified_users.csv
-├── src/
-│   ├── task1_hashtag_trends.py
-│   ├── task2_engagement_by_age.py
-│   ├── task3_sentiment_vs_engagement.py
-│   └── task4_top_verified_users.py
-```
-
 
 ##  Task Overview
 
